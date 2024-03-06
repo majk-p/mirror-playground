@@ -22,5 +22,6 @@ class RegularClass
 object Main extends App {
   val result = mirrorForRecord()
   println(result)
+  println(codeOf(summon[Mirror.Of[Record]]))
 
 }
