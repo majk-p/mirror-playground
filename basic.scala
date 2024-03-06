@@ -1,5 +1,5 @@
 import scala.deriving.*
-import scala.compiletime.*
+import scala.compiletime.codeOf
 
 case class Record(name: String, value: Long)
 
@@ -22,6 +22,6 @@ class RegularClass
 object Main extends App {
   val result = mirrorForRecord()
   println(result)
-  println(codeOf(summon[Mirror.Of[Record]]))
+  // println(codeOf(summon[Mirror.Of[Record]]))
 
 }

@@ -1,8 +1,5 @@
 import scala.deriving.*
 import scala.compiletime.*
-import scala.reflect.ClassTag
-
-import scala.compiletime.ops.any.*
 
 case class MyCaseClass(text: String, number: Long, boolean: Boolean)
 
@@ -36,7 +33,7 @@ inline def getElemTypes[A <: Tuple]: List[String] =
       headElementLabel :: tailElementLabels
   }
 
-transparent inline def guessTypeName[T]: String =
+inline def guessTypeName[T]: String =
   inline erasedValue[T] match
     case _: Byte    => "Byte"
     case _: Char    => "Char"
